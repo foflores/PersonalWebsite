@@ -49,3 +49,8 @@
 	display: flex;
 	flex-direction: row;
 }
+
+.down-arrow {
+	height: 2rem;
+	width: 2rem;
+}
