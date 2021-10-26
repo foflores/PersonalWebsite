@@ -22,15 +22,15 @@
 .img-profile {
 	border-radius: 50%;
 	padding: 0;
-	height: 50%;
-	width: 50%;
+	height: 12rem;
+	width: 12rem;
 }
 
 .img-post {
-	min-height: 100px;
-	min-width: 100px;
-	height: 15vh;
-	width: 15vh;
+	min-height: 6rem;
+	min-width: 6rem;
+	height: 10vw;
+	width: 10vw;
 	border-radius: 15%;
 }
 
@@ -44,10 +44,8 @@
 	font-size: small;
 }
 
-.fixed-width {
-	flex: 0 0 120px;
-}
-
-.fixed-width0 {
-	flex: 0 0 0px;
+.col-mod {
+	position: relative;
+	display: flex;
+	flex-direction: row;
 }
