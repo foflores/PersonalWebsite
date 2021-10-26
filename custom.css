@@ -51,6 +51,8 @@
 }
 
 .down-arrow {
-	height: 2rem;
-	width: 2rem;
+	height: 5vw;
+	width: 5vw;
+	min-width: 1rem;
+	min-height: 1rem;
 }
