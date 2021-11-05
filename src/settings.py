@@ -121,11 +121,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'static/files'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'static/media'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-STATICFILES_DIRS = [BASE_DIR / 'static']
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -135,4 +136,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Django-Boostrap5 settings
 # https://django-bootstrap5.readthedocs.io/en/latest/settings.html
 BOOTSTRAP5 = dict()
-BOOTSTRAP5['css_url'] = {'url': '/static/files/bootstrap.min.css'}
+BOOTSTRAP5['css_url'] = {'url': '/static/bootstrap.min.css'}
