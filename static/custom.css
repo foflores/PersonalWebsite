@@ -14,11 +14,10 @@
 }
 
 .post-image {
-	min-height: 6rem;
-	min-width: 6rem;
-	height: 10vw;
-	width: 10vw;
-	border-radius: 15%;
+	min-height: 5rem;
+	min-width: 5rem;
+	height: 7vw;
+	width: 7vw;
 }
 
 .down-arrow {
