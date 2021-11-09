@@ -11,16 +11,19 @@
 				<div class="pb-5">
 					<div class="d-flex justify-content-center">
 						<img class="sidebar-image"
-							src="{{ personalInfo.image.url }}" alt="A picture of me!">
+							src="{{ myInfo.image }}" alt="A picture of me!">
 					</div>
-					<h5 class="m-3 text-white text-center">{{ personalInfo.name }}</h5>
-					<p class="m-3 me-1 text-white">{{ personalInfo.aboutMe	}}</p>
+					<h5 class="m-3 text-white text-center">{{ myInfo.name }}</h5>
+					<p class="m-3 me-1 text-white">{{ myInfo.aboutMe	}}</p>
 					<div class="row g-0">
 						<div class="col btn m-2 btn-mod"
-						onclick="window.open('{{ personalInfo.github }}')">Github
+						onclick="window.open('{{ myInfo.github }}')">Github
 						</div>
 						<div class="col btn m-2 btn-mod"
-						onclick="window.open('{{ personalInfo.linkedin }}')">LinkedIn
+						onclick="window.open('{{ myInfo.linkedin }}')">LinkedIn
+						</div>
+						<div class="col btn m-2 btn-mod"
+						onclick="window.open('{{ myInfo.resume }}')">Resume
 						</div>
 					</div>
 					<div class="d-flex d-md-none justify-content-center">
@@ -32,29 +35,37 @@
 
 		<!-- Posts -->
 		<div class="col-12 col-md-7 col-lg-8 px-1">
-			{% for project in recentProjects %}
+			{% for post in recentPosts %}
 			<div class="card m-2 p-2">
-				<p class="card-header card-header-mod p-0 mb-2">{{ project.dateCreated }}</p>
+				<p class="card-header card-header-mod p-0 mb-2">{{ post.dateCreated | date:"F d, Y" }}</p>
 				<div class="row">
-					<div class="col d-flex">
-						{% if project.image %}
-						<img class="post-image" src="{{ project.image.url }}">
+					<div class="col d-flex pe-0 align-items-center">
+						{% if post.showIcon %}
+							{% if post.icon %}
+								<img class="post-image me-3" src="{{ post.icon }}">
+							{% elif post.project.icon %}
+								<img class="post-image me-3" src="{{ post.project.icon }}">
+							{% endif %}
 						{% endif %}
 						<div class="px-2">
-							<h4 class="card-title">{{ project.title }}</h4>
-							{% if project.link %}
-							<div class="col btn btn-mod" onclick="window.open('{{project.link}}')">
-								View on Github
+							<h4 class="card-title">{{ post.title }}</h4>
+							{% if post.project.github %}
+							<div class="col btn btn-mod" onclick="window.open('{{ post.project.github }}')">
+								Github
+							</div>
+							{% endif %}
+							{% if post.link %}
+							<div class="col btn btn-mod" onclick="window.open('{{post.link}}')">
+								{{ post.linkTitle }}
 							</div>
 							{% endif %}
 						</div>
 					</div>
-					<p class="card-text px-3 py-2">{{ project.text }}</p>
+					<p class="card-text px-3 py-2">{{ post.text }}</p>
 				</div>
 			</div>
 			{% endfor %}
 		</div>
-
 	</div>
 </body>
 {% endblock %}

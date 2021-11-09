@@ -7,11 +7,12 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta property="og:title" content="Favian's Personal Website">
+		<meta property="og:title" content="Favian's Website">
 		<meta name="author" content="Favian Flores">
-		<meta property="og:description" content="Favian's Personal Website">
+		<meta property="og:description" content="Favian's Website">
 		<meta property="og:image"
-			content="https://github.com/foflores10/PersonalWebsite/blob/main/media/profile.jpg?raw=true">
+			content="{% get_media_prefix %}users/001/image.jpg">
+		<link rel="icon" href="{% get_media_prefix %}favicon.ico">
 		{% bootstrap_css %}
 		<link rel="stylesheet" href="{% static 'custom.css' %}">
 		<title>Favian's Personal Website</title>

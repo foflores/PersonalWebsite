@@ -1,10 +1,11 @@
 from django.shortcuts import render
 from blog.models import Post
 from blog.models import Author
+import markdown
 
 def homeView(request):
-	recentProjects = Post.objects.order_by('dateCreated')[:3]
-	personalInfo = Author.objects.first()
+	recentPosts = Post.objects.order_by('dateCreated').reverse()
+	myInfo = Author.objects.get(pk=1)
 
-	context = {"recentProjects": recentProjects, "personalInfo": personalInfo}
+	context = {"recentPosts": recentPosts, "myInfo": myInfo}
 	return render(request, "home.html", context)
