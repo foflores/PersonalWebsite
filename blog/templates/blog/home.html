@@ -1,0 +1,26 @@
+{% extends "home.html" %}
+
+
+{% block home1 %}
+		<!-- Posts -->
+		<div class="col-12 col-md-7 col-lg-8 px-1">
+			{% for post, links in recentPosts %}
+			<div class="card m-2 p-2">
+				<p class="card-header card-header-mod p-0 mb-2">{{ post.created | date:"F d, Y" }}</p>
+				<div class="row">
+					<div class="col d-flex pe-0 align-items-center">
+						<div>
+							<h4 class="card-title">{{ post.title }}</h4>
+							{% for link in links %}
+								<div class="col btn btn-mod" onclick="window.open('{{ link.link }}')">
+									{{ link.title }}
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+					<p class="card-text px-3 py-2">{{ post.text }}</p>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+{% endblock %}
