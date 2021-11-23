@@ -1,24 +1,25 @@
 {% extends "home.html" %}
 
+{% block navbtn2 %} ff-navbar-active {% endblock %}
 
-{% block home1 %}
+{% block home_content %}
 		<!-- Posts -->
 		<div class="col-12 col-md-7 col-lg-8 px-1">
 			{% for post, links in recentPosts %}
 			<div class="card m-2 p-2">
-				<p class="card-header card-header-mod p-0 mb-2">{{ post.created | date:"F d, Y" }}</p>
+				<p class="card-header font-small p-0 mb-2">{{ post.created | date:"F d, Y" }}</p>
 				<div class="row">
 					<div class="col d-flex pe-0 align-items-center">
 						<div>
 							<h4 class="card-title">{{ post.title }}</h4>
 							{% for link in links %}
-								<div class="col btn btn-mod" onclick="window.open('{{ link.link }}')">
+								<div class="col btn btn-blue" onclick="window.open('{{ link.link }}')">
 									{{ link.title }}
 								</div>
 							{% endfor %}
 						</div>
 					</div>
-					<p class="card-text px-3 py-2">{{ post.text }}</p>
+					<p class="card-text py-2 p-0">{{ post.text }}</p>
 				</div>
 			</div>
 			{% endfor %}

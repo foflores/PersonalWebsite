@@ -1,40 +1,34 @@
 {% extends "base.html" %}
 
-
-{% block base1 %}
-<link rel="stylesheet" href="{{ STATIC_URL }}home.css">
-<body class="bg-black">
-	<div class="row m-0 p-0">
-		<div class="col-12 col-md-5 col-lg-4 m-0 p-0">
-			<div class="sidebar sticky-top m-0 p-0">
-				<div class="pb-5">
-					<div class="d-flex justify-content-center">
-						<img class="sidebar-image"
-							src="{{ MEDIA_URL }}{{ myInfo.image }}" alt="A picture of me!">
-					</div>
-					<h5 class="m-3 text-white text-center">{{ myInfo.name }}</h5>
-					<p class="m-3 me-1 text-white">{{ myInfo.aboutMe	}}</p>
-					<div class="row g-0">
-						<div class="col btn m-2 btn-mod"
-						onclick="window.open('{{ myInfo.github }}')">Github
-						</div>
-						<div class="col btn m-2 btn-mod"
-						onclick="window.open('{{ myInfo.linkedin }}')">LinkedIn
-						</div>
-						<div class="col btn m-2 btn-mod"
-						onclick="window.open('{{ MEDIA_URL }}{{ myInfo.resume }}')">Resume
-						</div>
-					</div>
-					<div class="d-flex d-md-none justify-content-center">
-						<img class="down-arrow mt-2" src="{{ STATIC_URL }}arrowDownCircle.png">
-					</div>
+{% block base_content %}
+<div class="row">
+	<div class="col-12 col-md-5 col-lg-4">
+		{% if myInfo %}
+			<div class="container d-flex flex-column align-items-center justify-content-center sticky-top px-0 py-3 ff-sidebar">
+				<img class="img-thumbnail rounded-circle my-1 ff-sidebar-img"
+					src="{{ MEDIA_URL }}{{ myInfo.image }}" alt="A picture of me!">
+				<h5 class="text-white text-center my-1">{{ myInfo.user.first_name }} {{ myInfo.user.last_name }}</h5>
+				<p class="text-white text-center my-1">{{ myInfo.aboutMe	}}</p>
+				<div class="d-flex flex-row justify-content-center my-2">
+					<a class="btn ff-btn-blue mx-2"
+					href="{{ myInfo.github }}" target="_blank">Github
+					</a>
+					<a class="btn ff-btn-blue mx-2"
+					href="{{ myInfo.linkedin }}" target="_blank">LinkedIn
+					</a>
+					<a class="btn ff-btn-blue mx-2"
+					href="{{ MEDIA_URL }}{{ myInfo.resume }}" target="_blank">Resume
+					</a>
+				</div>
+				<div class="d-flex d-md-none justify-content-center">
+					<img class="ff-sidebar-arrow m-2" src="{{ STATIC_URL }}arrowDownCircle.png">
 				</div>
 			</div>
-		</div>
-
-		{% block home1 %}
-		{% endblock %}
-
+		{% endif %}
 	</div>
-</body>
+
+	{% block home_content %}
+	{% endblock %}
+
+</div>
 {% endblock %}

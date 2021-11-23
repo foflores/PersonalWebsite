@@ -7,4 +7,4 @@ from django.conf import settings
 urlpatterns = [
 	path("", views.projectsHome, name="projectsHome"),
 	re_path(r"^[\w]+$", views.projectsDetail, name="projectsDetail"),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static("/media/", document_root=settings.MEDIA_ROOT)

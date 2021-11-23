@@ -10,7 +10,9 @@ def blogHome(request):
 		links = post.postlink.all()
 		posts.append([post, links])
 
-	myInfo = Author.objects.get(pk=1)
+	myInfo = None
+	if Author.objects.filter(id=1):
+		myInfo = Author.objects.filter(id=1)[0]
 
 	context = {"recentPosts": posts, "myInfo": myInfo}
 
