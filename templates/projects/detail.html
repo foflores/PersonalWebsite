@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block navleft %}
+<a class="btn ff-btn-blue ms-3 position-absolute" href="/">Back</a>
+{% endblock %}
+
+{% block navbtn1 %} active {% endblock %}
+
+{% block base_content %}
+	<h3 class="text-center text-white">Project Details</h3>
+	<div class="d-flex flex-column flex-wrap readme-box text-white m-0 p-2 m-md-2 p-md-4">
+		{{ readme | safe }}
+	</div>
+	{% if previews %}
+	<h3 class="text-center text-white">Previews</h3>
+	<div class="preview-box m-0 m-md-2 p-0">
+		{% for preview in previews %}
+			<div class="preview p-2 px-3">
+				<h3 class="text-white text-center">{{ preview.title }}</h3>
+				<img src="{{ MEDIA_URL}}{{ preview.preview }}">
+			</div>
+		{% endfor %}
+	</div>
+	{% endif %}
+{% endblock %}

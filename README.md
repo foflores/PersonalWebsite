@@ -1,6 +1,6 @@
 <div align="center">
 	<a href="https://www.github.com/foflores10/personalwebsite">
-		<img src="https://projects.foflores.com/personalwebsite/icon.png" width=128>
+		<img src="https://media.foflores.com/projects/personalwebsite/icon.png" width=128>
 	</a>
 	<h3>Personal Website</h3>
 </div>
@@ -20,5 +20,9 @@ The website is currently deployed [here](https://www.foflores.com) using Nginx a
 - python3
 - django
 - uwsgi
-- django-bootstrap5
 - django-hosts
+- bootstrap
+- mysqlclient
+- mysql
+- pillow
+- markdown

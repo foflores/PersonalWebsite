@@ -32,6 +32,7 @@ class Project(models.Model):
 
 class ProjectPreview(models.Model):
 	project = models.ForeignKey(Project, on_delete=models.CASCADE)
+	title = models.CharField(max_length=50, blank=True, null=True)
 	preview = models.FileField(upload_to=pathProjectPreviews, null=True, blank=True)
 
 # Delete files on project delete
