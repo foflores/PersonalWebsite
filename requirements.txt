@@ -1,7 +1,7 @@
 asgiref==3.4.1
 astroid==2.8.4
 beautifulsoup4==4.10.0
-Django==3.2.9
+Django==3.2.12
 django-hosts==4.0
 isort==5.10.0
 lazy-object-proxy==1.6.0
