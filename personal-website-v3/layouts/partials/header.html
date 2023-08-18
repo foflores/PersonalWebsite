@@ -1,0 +1,87 @@
+<header class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+
+
+                <a class="logo-link" href="{{ .Site.BaseURL }}">
+                    {{ .Site.Title }}
+                </a>
+
+                <div class="hamburger">
+                    <div></div>
+                </div>
+
+                <nav class="main-nav" aria-label="Main menu">
+                    <div class="main-nav__box">
+                        <ul class="nav__list list-reset">
+
+                            {{ range.Site.Menus.main }}
+                            {{ if .HasChildren }}
+                            <li class="nav__item dropdown">
+                                <span class="nav__link dropdown-toggle">{{ .Name }} {{ partial "svg" "down-chevron"}}</span>
+                                <div class="dropdown-menu">
+                                    {{ range .Children }}
+                                    <a href="{{if findRE `^#` .URL}}{{if not $.IsHome}}{{site.BaseURL | relLangURL}}{{end}}{{ .URL }}{{else}}{{.URL | relLangURL}}{{end}}"
+                                       class="nav__link">{{ .Name }}</a>
+                                    {{ end }}
+                                </div>
+                            </li>
+                            {{ else }}
+                            <li class="nav__item">
+                                <a href="{{if findRE `^#` .URL}}{{if not $.IsHome}}{{site.BaseURL | relLangURL}}{{end}}{{ .URL }}{{else}}{{.URL | relLangURL}}{{end}}" class="nav__link">{{ .Name }}</a>
+                            </li>
+                            {{ end }}
+                            {{ end }}
+
+                        </ul>
+                    </div>
+
+                    <div class="nav-button">
+                        {{ if eq .Site.Params.color_scheme "auto" }}
+                        <div class="toggle-theme toggle-theme-js">
+                            <div class="toggle-moon" title="Enable dark mode">{{ partial "svg" "moon" }}</div>
+                            <div class="toggle-sun" title="Enable light mode">{{ partial "svg" "sun" }}</div>
+                        </div>
+                        {{ else if eq .Site.Params.color_scheme "light" }}
+                        <div class="toggle-theme theme-light">
+                            <div class="toggle-sun" title="Light mode">{{ partial "svg" "sun" }}</div>
+                        </div>
+                        {{ else if eq .Site.Params.color_scheme "dark" }}
+                        <div class="toggle-theme theme-dark">
+                            <div class="toggle-moon" title="Dark mode">{{ partial "svg" "moon" }}</div>
+                        </div>
+                        {{ else }}
+                        <div class="toggle-theme toggle-theme-js">
+                            <div class="toggle-moon" title="Enable dark mode">{{ partial "svg" "moon" }}</div>
+                            <div class="toggle-sun" title="Enable light mode">{{ partial "svg" "sun" }}</div>
+                        </div>
+                        {{ end }}
+                        {{ partial "svg" "search"}}
+                    </div>
+
+                </nav>
+
+            </div>
+        </div>
+    </div>
+</header>
+<div class="search">
+    <div class="container">
+        <div class="row">
+            <div class="col col-12">
+                <div class="search__box">
+                    <div class="search__group">
+                        <div class="search__close">
+                            {{ partial "svg" "close" }}
+                        </div>
+                        <label for="js-search-input" class="screen-reader-text">Search for Blog</label>
+                        <input type="text" id="js-search-input" class="search__text" autocomplete="off" placeholder="Type to search...">
+                    </div>
+                    <div id="js-results-container" class="search-results-list" style="display:none;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="search__overlay"></div>
+</div>

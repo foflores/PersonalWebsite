@@ -1,0 +1,36 @@
+:root {
+  --brand-color: #0073ec;
+  --white: #fff;
+  --light-gray: #f0f0f0;
+  --gray: #bdbdbd;
+  --dark: #1f2934;
+  --dark-blue: #161d26;
+  --rgb-image-color: 22, 29, 38;
+
+  --image-gradient: linear-gradient(180deg, rgba(var(--rgb-image-color), 0.8), rgba(var(--rgb-image-color), 1));
+
+  --background-color: var(--dark-blue);
+  --background-alt-color: var(--dark);
+
+  --text-color: var(--gray);
+  --text-alt-color: var(--gray);
+
+  --heading-font-color: var(--light-gray);
+
+  --link-color: var(--light-gray);
+  --link-color-hover: var(--light-gray);
+
+  --button-color: var(--white);
+  --button-background-color: var(--background-alt-color);
+  --button-background-hover: var(--brand-color);
+
+  --border-color: #252629;
+  --border-color-alt: #080b12;
+
+  --th-color: #18181d;
+  --tr-color: #080b12;
+
+  --syntax-highlighting-background: #080b12;
+
+  --code-color: #333333;
+}

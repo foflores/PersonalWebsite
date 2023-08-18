@@ -1,0 +1,77 @@
+<!-- begin header -->
+<header class="header">
+  <div class="container-big">
+    <div class="row">
+      <div class="header__inner col col-12">
+
+        <div class="logo">
+          <a class="logo__link" href="{{ .Site.BaseURL }}">
+            {{ if .Site.Params.logo }}
+            <img class="logo__image" src="{{ .Site.BaseURL }}{{ .Site.Params.logo }}" alt="{{ .Site.Title }}">
+            {{ else }}
+              {{ .Site.Title }}
+            {{ end }}
+          </a>
+        </div>
+
+        <div class="hamburger">
+          <div></div>
+        </div>
+
+        <nav class="main-nav" aria-label="Main menu">
+          <div class="main-nav__box">
+            <ul class="nav__list list-reset">
+
+              {{ range.Site.Menus.main }}
+              {{ if .HasChildren }}
+              <li class="nav__item dropdown">
+                <span class="nav__link dropdown-toggle">{{ .Name }} {{ partial "svg" "down-chevron"}}</span>
+                <div class="dropdown-menu">
+                  {{ range .Children }}
+                  <a href="{{if findRE `^#` .URL}}{{if not $.IsHome}}{{site.BaseURL | relLangURL}}{{end}}{{ .URL }}{{else}}{{.URL | relLangURL}}{{end}}"
+                    class="nav__link">{{ .Name }}</a>
+                  {{ end }}
+                </div>
+              </li>
+              {{ else }}
+              <li class="nav__item">
+                <a href="{{if findRE `^#` .URL}}{{if not $.IsHome}}{{site.BaseURL | relLangURL}}{{end}}{{ .URL }}{{else}}{{.URL | relLangURL}}{{end}}" class="nav__link">{{ .Name }}</a>
+              </li>
+              {{ end }}
+              {{ end }}
+
+            </ul>
+          </div>
+
+          <div class="nav-button">
+            {{ if eq .Site.Params.color_scheme "auto" }}
+            <div class="toggle-theme toggle-theme-js">
+              <div class="toggle-moon" title="Enable dark mode">{{ partial "svg" "moon" }}</div>
+              <div class="toggle-sun" title="Enable light mode">{{ partial "svg" "sun" }}</div>
+            </div>
+            {{ else if eq .Site.Params.color_scheme "light" }}
+            <div class="toggle-theme theme-light">
+              <div class="toggle-sun" title="Light mode">{{ partial "svg" "sun" }}</div>
+            </div>
+            {{ else if eq .Site.Params.color_scheme "dark" }}
+            <div class="toggle-theme theme-dark">
+              <div class="toggle-moon" title="Dark mode">{{ partial "svg" "moon" }}</div>
+            </div>
+            {{ else }}
+            <div class="toggle-theme toggle-theme-js">
+              <div class="toggle-moon" title="Enable dark mode">{{ partial "svg" "moon" }}</div>
+              <div class="toggle-sun" title="Enable light mode">{{ partial "svg" "sun" }}</div>
+            </div>
+            {{ end }}
+            {{ partial "svg" "search"}}
+          </div>
+
+        </nav>
+
+      </div>
+    </div>
+  </div>
+</header>
+<!-- end header -->
+
+{{ partial "search.html" . }}

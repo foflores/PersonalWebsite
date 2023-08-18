@@ -1,0 +1,31 @@
+name: Build And Deploy - Staging
+
+on:
+  workflow_dispatch:
+
+  push:
+    branches:
+      - main
+
+
+jobs:
+  build-and-deploy:
+      runs-on: ubuntu-latest
+      steps:
+      - name: Checkout Main
+        uses: actions/checkout@v3.5.2
+
+      - name: Hugo setup
+        uses: peaceiris/actions-hugo@v2.6.0
+        with:
+          hugo-version: '0.111.3'
+          extended: true
+
+      - name: Build
+        run: hugo --environment staging
+
+      - name: Deploy
+        run: hugo deploy --force --maxDeletes -1 --invalidateCDN --environment staging
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.STAGING_AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.STAGING_AWS_SECRET_ACCESS_KEY }}

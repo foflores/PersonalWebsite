@@ -1,0 +1,13 @@
+.header {
+  .logo-link {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--white);
+      transition: color .25s ease;
+      text-decoration: none;
+
+      &:hover {
+        color: var(--brand-color);
+      }
+  }
+}

@@ -1,0 +1,10 @@
+baseURL: https://favianflores.com/
+googleAnalytics: "G-DJ6YYREJ5N"
+buildDrafts: false
+buildFuture: false
+
+deployment:
+  targets:
+    name: https://favianflores.com/
+    URL: s3://favians-blog20230429133405839300000001?region=us-east-1
+    cloudFrontDistributionID: ENJ5VZDPWG8KP
