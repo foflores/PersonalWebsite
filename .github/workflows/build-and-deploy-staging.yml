@@ -6,6 +6,8 @@ on:
 jobs:
   build-and-deploy:
       runs-on: ubuntu-latest
+      env:
+        working-directory: ./personal-website-v3
       steps:
       - name: Checkout Main
         uses: actions/checkout@v3.5.2
@@ -13,7 +15,7 @@ jobs:
       - name: Hugo setup
         uses: peaceiris/actions-hugo@v2.6.0
         with:
-          hugo-version: '0.111.3'
+          hugo-version: '0.117.0'
           extended: true
 
       - name: Build

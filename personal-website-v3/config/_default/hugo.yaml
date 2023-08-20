@@ -23,9 +23,9 @@ params:
   description: "Hey! I'm Favian and this is my blog where I write about software development. You can find explainers, how-tos, guides, tips & tricks, and anything else I can think of."
   keywords: [Blog]
   author: "Favian Flores"
-  images: ["<link or path of image for opengraph, twitter-cards>"]
+  images: ["/website-banner.webp"]
   DateFormat: "January 2, 2006"
-  defaultTheme: dark # dark, light
+  defaultTheme: dark # dark, light, auto
   disableThemeToggle: false
 
   ShowReadingTime: true
@@ -39,32 +39,30 @@ params:
   disableSpecial1stPost: true
   disableScrollToTop: false
   comments: false
-  hidemeta: false
-  hideSummary: false
+  hideMeta: true
+  hideSummary: true
   showtoc: true
   tocopen: false
 
   assets:
-    # disableHLJS: true # to disable highlight.js
-    # disableFingerprinting: true
-    favicon: "<link / abs url>"
-    favicon16x16: "<link / abs url>"
-    favicon32x32: "<link / abs url>"
-    apple_touch_icon: "<link / abs url>"
-    safari_pinned_tab: "<link / abs url>"
+    disableHLJS: false # to disable highlight.js
+    disableFingerprinting: false
+    favicon: "/favicon.ico"
+    favicon16x16: "/favicon-16x16.ico"
+    favicon32x32: "/favicon-32x32.ico"
+    apple_touch_icon: "apple-touch-icon.png"
+    safari_pinned_tab: "apple-touch-icon.png"
 
   label:
     text: "Favian Flores"
-    icon: /apple-touch-icon.png
-    iconHeight: 35
 
   profileMode:
     enabled: false
-    title: ExampleSite
-    subtitle: "This is subtitle"
-    imageUrl: "<img location>"
-    imageWidth: 120
-    imageHeight: 120
+    title: "Favian Flores"
+    subtitle: "Welcome to my blog!"
+    imageUrl: "/author-favian.webp"
+    imageWidth: 260
+    imageHeight: 250
     imageTitle: my image
     buttons:
       - name: Posts
