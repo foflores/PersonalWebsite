@@ -2,15 +2,15 @@
 title: "{{ replace .Name "-" " " | title }}"
 date: <yyyy-mm-dd>T00:00:00-04:00
 # weight: 1
-# aliases: ["/first"]
-tags: ["first"]
+# aliases: [""]
+tags: [""]
 author: "Me"
 showToc: true
 TocOpen: false
 draft: false
-hidemeta: false
+hideMeta: false
 comments: false
-canonicalURL: "https://favianflores.com/post/2023/{{ replace .Name "-" " " | title }}"
+canonicalURL: "https://favianflores.com/posts/2023/{{ .Name }}/"
 disableHLJS: false
 disableShare: false
 hideSummary: false
