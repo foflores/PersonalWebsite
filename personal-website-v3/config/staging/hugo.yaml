@@ -1,10 +1,15 @@
 baseURL: https://favianflores.net/
-googleAnalytics: ""
+
+enableRobotsTXT: false
 buildDrafts: false
 buildFuture: true
+buildExpired: false
 
 deployment:
   targets:
     name: https://favianflores.net/
     URL: s3://favianflores.net?region=us-east-1
     cloudFrontDistributionID: E2D8I1PBRLCXOE
+
+params:
+  env: production

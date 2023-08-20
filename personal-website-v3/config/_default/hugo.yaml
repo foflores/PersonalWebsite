@@ -1,171 +1,132 @@
-#-------------------------------
-# Hugo Site Settings
-title: "Favian Flores"
 baseURL: "http://10.10.10.138:1313/"
-languageCode: "en-us"
-cleanDestinationDir: true
-paginate: 7
-buildDrafts: true
-enableGitInfo: true
+title: "Favian Flores"
+paginate: 5
+theme: PaperMod
+
+enableRobotsTXT: false
+buildDrafts: false
+buildFuture: false
+buildExpired: false
 
 minify:
+  disableXML: true
   minifyOutput: true
 
-taxonomies:
-  tag: "tags"
-  category: "categories"
-
-markup:
-  goldmark:
-    renderer:
-      unsafe: true
-
 outputs:
-  home: ["HTML", "RSS", "JSON"]
+  home:
+    - HTML
+    - RSS
+    - JSON
 
-highlight:
-  codeFences: true
-  guessSyntax: true
-  noClasses: false
+params:
+  title: "Favian Flores"
+  description: "Hey! I'm Favian and this is my blog where I write about software development. You can find explainers, how-tos, guides, tips & tricks, and anything else I can think of."
+  keywords: [Blog]
+  author: "Favian Flores"
+  images: ["<link or path of image for opengraph, twitter-cards>"]
+  DateFormat: "January 2, 2006"
+  defaultTheme: dark # dark, light
+  disableThemeToggle: false
 
-frontmatter:
-  date:
-  - publishDate
-  - date
-  - lastmod
-  expiryDate:
-  - expiryDate
-  lastmod:
-  - :git
-  - lastmod
-  - date
-  - publishDate
-  publishDate:
-  - publishDate
-  - date
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: false
+  ShowRssButtonInSectionTermList: false
+  UseHugoToc: true
+  disableSpecial1stPost: true
+  disableScrollToTop: false
+  comments: false
+  hidemeta: false
+  hideSummary: false
+  showtoc: true
+  tocopen: false
 
+  assets:
+    # disableHLJS: true # to disable highlight.js
+    # disableFingerprinting: true
+    favicon: "<link / abs url>"
+    favicon16x16: "<link / abs url>"
+    favicon32x32: "<link / abs url>"
+    apple_touch_icon: "<link / abs url>"
+    safari_pinned_tab: "<link / abs url>"
+
+  label:
+    text: "Favian Flores"
+    icon: /apple-touch-icon.png
+    iconHeight: 35
+
+  profileMode:
+    enabled: false
+    title: ExampleSite
+    subtitle: "This is subtitle"
+    imageUrl: "<img location>"
+    imageWidth: 120
+    imageHeight: 120
+    imageTitle: my image
+    buttons:
+      - name: Posts
+        url: posts
+      - name: Tags
+        url: tags
+
+  homeInfoParams:
+    Title: "Hey \U0001F44B"
+    Content: "I'm Favian and this is my blog where I write about software development. You can find explainers, how-tos, guides, tips & tricks, and anything else I can think of."
+
+  socialIcons:
+    - name: twitter
+      url: "http://twitter.com/foflores10/"
+    - name: linkedin
+      url: "https://www.linkedin.com/in/foflores10"
+    - name: github
+      url: "https://github.com/foflores/"
+
+  analytics:
+    google:
+      SiteVerificationTag: "XYZabc"
+    bing:
+      SiteVerificationTag: "XYZabc"
+    yandex:
+      SiteVerificationTag: "XYZabc"
+
+  cover:
+    hidden: true # hide everywhere but not in structured data
+    hiddenInList: true # hide on list pages and home
+    hiddenInSingle: true # hide on single page
+
+  # for search
+  # https://fusejs.io/api/options.html
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
 menu:
-  #-------------------------------
-  # Main Menu Settings
   main:
-    - identifier: "home"
-      name: "Home"
-      url: "/"
-      weight: 1
-
-    - identifier: "about"
-      name: "About"
-      url: "/about/"
-      weight: 2
-
-    - identifier: "archive"
-      name: "Archive"
-      url: "/posts/"
-      weight: 6
-
-    - parent: "Topics"
-      name: "Cloud"
-      url: "/categories/cloud/"
-      weight: 1
-
-    - parent: "Topics"
-      name: "DevOps"
-      url: "/categories/devops/"
-      weight: 2
-
-    - parent: "Topics"
-      name: "Web"
-      url: "/categories/web/"
-      weight: 3
-
-    - parent: "Topics"
-      name: "Programming"
-      url: "/categories/programming/"
-      weight: 4
-
-  #-------------------------------
-  # Footer Menu Settings
-#  footer:
-#    - identifier: "home"
-#      name: "Home"
-#      url: "/"
-#      weight: 1
-#
-#    - identifier: "about"
-#      name: "About"
-#      url: "/about/"
-#      weight: 2
-#
-#    - identifier: "blog"
-#      name: "Blog"
-#      url: "/posts/"
-#      weight: 3
-#
-#
-#params:
-#  #-------------------------------
-#  # Site Metadata
-#  logo: ""
-#  description: "Hey! I'm Favian and this is my blog where I write about software development. You can find explainers, how-tos, guides, tips & tricks, and anything else I can think of."
-#  color_scheme: "auto" # You can choose auto, light, or dark.
-#
-#  #-------------------------------
-#  # Hero Settings
-#  hero:
-#    enable: true
-#    hero__title: "A Dev With A Blog"
-#    hero__description: "Hey! I'm Favian and this is my blog where I write about software development. You can find explainers, how-tos, guides, tips & tricks, and anything else I can think of."
-#    hero__image: ""
-#
-#  #-------------------------------
-#  # Blog Section Settings
-#  blog:
-#    enable: true
-#    blog__title: "Latest Posts"
-#    blog__description: ""
-#
-#  #-------------------------------
-#  # Videos Section Settings
-#  videos:
-#    enable: false
-#    videos__title: "Latest Videos"
-#    videos__description: ""
-#
-#  #-------------------------------
-#  # Tag Section Settings
-#  tag:
-#    enable: false
-#    tag: ".NET" # Highlight a specific tag
-#
-#  #-------------------------------
-#  # Email List
-#  mailchimp:
-#    enable: false
-#    mailchimp__title: "Sign me up!"
-#    mailchimp__description: "Enter your email to be notified when there's some fresh new content to read."
-#    mailchimp__identifier: "" # Add your MailChimp form identifier.
-#    mailchimp__input__text: "Your email address"
-#    mailchimp__button__text: "Subscribe"
-#    mailchimp__background__image: ""
-#
-#  #-------------------------------
-#  # Footer Settings
-#  footer:
-#    footer__description: "Thanks for checking out my blog!"
-#
-#  #-------------------------------
-#  # Social Links
-#  social:
-#    - icon: "twitter"
-#      name: "Twitter"
-#      link: "https://twitter.com/foflores10"
-#
-#    - icon: "linkedin"
-#      name: "LinkedIn"
-#      link: "https://linkedin.com/in/foflores10"
-#
-#  #-------------------------------
-#  # Comment Section (Disqus)
-#  disqus:
-#    enable: false
-#    disqusShortname: "" # Add your shortname for Disqus Comments.
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 10
+    - identifier: blog
+      name: Archives
+      url: /archives/
+      weight: 20
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 30
+pygmentsUseClasses: true
+markup:
+  highlight:
+    noClasses: false
+    anchorLineNos: true
+    codeFences: true
+    guessSyntax: true
+    lineNos: false
+    style: monokai
