@@ -9,8 +9,8 @@ buildExpired: false
 deployment:
   targets:
     name: https://favianflores.com/
-    URL: s3://favians-blog20230429133405839300000001?region=us-east-1
-    cloudFrontDistributionID: ENJ5VZDPWG8KP
+    URL: s3://personal-website-20230829014705989700000001?region=us-east-1
+    cloudFrontDistributionID: E3UMPWD5GTR978
 
 params:
   env: production
