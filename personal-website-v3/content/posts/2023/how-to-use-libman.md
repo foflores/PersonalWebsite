@@ -94,7 +94,7 @@ libman also provides several utility commands such as:
 - `libman uninstall` which lets you delete a library through the command line
 - `libman update` which lets you update a library through the command line
 
-LibMan is great if need to manage a small number of libraries and are not 
+LibMan is great if you need to manage a small number of libraries and are not 
 currently using any other package manager. However, if you need more 
 advanced configurations, you will most likely need to use a full featured 
 package manager such as npm or yarn.
