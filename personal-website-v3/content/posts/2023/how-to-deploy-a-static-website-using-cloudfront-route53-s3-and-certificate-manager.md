@@ -35,7 +35,7 @@ In this article, you will learn how to store a static website on S3, use CloudFr
 
 Ultimately, you will have a website that uses HTTPS, is accessible from a custom domain, and is distributed globally, giving your users faster loading times.
 
-## Setting up S3
+## Set up S3
 
 Amazon's S3 service uses buckets to organize files, similar to how folders work on a computer. So the first step is to create a bucket to upload your files.
 
@@ -49,7 +49,7 @@ Now you can upload your files to the bucket.
 2. Click "Upload"
 3. Add your files
 
-## Creating a public certificate
+## Create a public certificate
 
 Now that your website is on S3, the next step is to create a public certificate to use HTTPS with your domain.
 
@@ -65,7 +65,7 @@ You should now be able to see the certificate listed. The next step is to valida
 2. Click "Create records" again to confirm
 3. Wait until the certificate's status changes to "Issued"
 
-## Setting up CloudFront
+## Set up CloudFront
 
 Now that you have a valid certificate, you need to create a CloudFront distribution to distribute your website.
 
@@ -90,7 +90,7 @@ Now that you have a valid certificate, you need to create a CloudFront distribut
 
 CloudFront should now distribute your website, which takes around 15 minutes to complete. In the meantime, you can move on to configure the proper permissions for your S3 bucket so that CloudFront can read from it.
 
-## Configuring S3 permissions
+## Configure S3 permissions
 
 After clicking "Create distribution", there should be a notification at the top of your screen labeled "**The S3 bucket policy needs to be updated**"
 
@@ -100,7 +100,7 @@ After clicking "Create distribution", there should be a notification at the top 
 4. Paste the policy in the text field
 5. Click "Save changes"
 
-## Configuring Route53
+## Configure Route53
 
 Now your website is up and should be available at the distribution domain name CloudFront gave. The last step is to connect your domain to the CloudFront distribution.
 
