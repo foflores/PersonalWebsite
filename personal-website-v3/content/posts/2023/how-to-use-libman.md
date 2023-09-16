@@ -60,10 +60,12 @@ You can then customize the libman file with the libraries you want to use:
   "version": "1.0",
   "defaultProvider": "cdnjs",
   "defaultDestination": "wwwroot",
-  "libraries": [
+  "libraries": 
+  [
     {
       "library": "bootstrap@5.3.1",
-      "files": [
+      "files": 
+      [
         "css/bootstrap.min.css",
         "js/bootstrap.bundle.min.js"
       ],

@@ -1,9 +1,9 @@
 ---
 title: "How to deploy a static website using AWS S3, CloudFront, and Route53"
-date: 2023-09-16T00:00:00-04:00
+date: 2023-09-15T00:00:00-04:00
 # weight: 1
 # aliases: [""]
-tags: [""]
+tags: ["S3", "CloudFront", "Route53"]
 author: "Favian Flores"
 showToc: true
 TocOpen: false
@@ -28,8 +28,6 @@ cover:
     relative: false # when using page bundles set this to true
     hidden: true # only hide on current single page
 ---
-
-AWS has a seemingly endless supply of services and documentation explaining how each service works. However, they sometimes fall short regarding documentation of practical use cases for their services.
 
 In this article, you will learn how to store a static website on S3, use CloudFront as a content delivery network to distribute your website globally, and finally, use Route53 to access your website from a custom domain of your choice.
 
@@ -88,7 +86,7 @@ Now that you have a valid certificate, you need to create a CloudFront distribut
 11. Make sure the latest recommended version of TLS is selected as the security policy
 12. Under Default root object, type in the name of the html file the distribution should serve when visiting your domain.
     - This is usually index.html
-1. Click "Create distribution"
+13. Click "Create distribution"
 
 CloudFront should now distribute your website, which takes around 15 minutes to complete. In the meantime, you can move on to configure the proper permissions for your S3 bucket so that CloudFront can read from it.
 
