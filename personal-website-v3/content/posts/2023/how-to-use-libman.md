@@ -29,9 +29,7 @@ cover:
     hidden: true # only hide on current single page
 ---
 
-LibMan is a lightweight tool for managing client side libraries. It is 
-integrated in Visual Studio 2017+ or it can be installed as a .NET tool 
-using the following command:
+LibMan is a lightweight tool for managing client side libraries. It is integrated in Visual Studio 2017+ or it can be installed as a .NET tool using the following command:
 
 ```shell
 dotnet tool install --global Microsoft.Web.LibraryManager.Cli
@@ -75,11 +73,9 @@ You can then customize the libman file with the libraries you want to use:
 }
 ```
 
-In this example, I've configured libman to source the files from 
-[cdnjs](https://cdnjs.com) and place them into the wwwroot folder by default. 
+In this example, I've configured libman to source the files from [cdnjs](https://cdnjs.com) and place them into the wwwroot folder by default. 
 
-However, in the libraries array, I'm overriding the default destination and 
-I'm specifying that I only want the minified bootstrap css and js bundle.
+However, in the libraries array, I'm overriding the default destination and I'm specifying that I only want the minified bootstrap css and js bundle.
 
 Now, you need to run this:
 
@@ -96,7 +92,4 @@ libman also provides several utility commands such as:
 - `libman uninstall` which lets you delete a library through the command line
 - `libman update` which lets you update a library through the command line
 
-LibMan is great if you need to manage a small number of libraries and are not 
-currently using any other package manager. However, if you need more 
-advanced configurations, you will most likely need to use a full featured 
-package manager such as npm or yarn.
+LibMan is great if you need to manage a small number of libraries and are not currently using any other package manager. However, if you need more advanced configurations, you will most likely need to use a full featured package manager such as npm or yarn.

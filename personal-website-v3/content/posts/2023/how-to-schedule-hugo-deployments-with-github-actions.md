@@ -29,8 +29,7 @@ cover:
     hidden: true # only hide on current single page
 ---
 
-In this article I'm going to show you how to create a GitHub workflow which 
-automatically deploys a hugo website on a set schedule.
+In this article I'm going to show you how to create a GitHub workflow which automatically deploys a hugo website on a set schedule.
 
 ## Add access keys
 

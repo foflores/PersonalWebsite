@@ -31,12 +31,9 @@ cover:
 
 In this article, I'm going to show you how to use Hugo's built-in `hugo deploy` command to deploy your site to a CloudFront distribution. You're going to learn how to set up an IAM user on AWS, authenticate the AWS CLI, and configure the Hugo CLI so that you can deploy your Hugo website using 1 command.
 
-**Before you begin, make sure you have a CloudFront distribution with an S3 
-bucket as an origin. You can find a guide on setting one up [here](/posts/2023/how-to-deploy-a-static-website-using-cloudfront-route53-s3-and-certificate-manager/). 
-You are also going to need to have the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) and [Hugo](https://gohugo.io/installation) installed.**
+**Before you begin, make sure you have a CloudFront distribution with an S3 bucket as an origin. You can find a guide on setting one up [here](/posts/2023/how-to-deploy-a-static-website-using-cloudfront-route53-s3-and-certificate-manager/). You are also going to need to have the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) and [Hugo](https://gohugo.io/installation) installed.**
 
-*If you already have the AWS CLI installed and configured with the right access, 
-you can skip down to the [Configure Hugo](#configure-hugo) section*
+*If you already have the AWS CLI installed and configured with the right access, you can skip down to the [Configure Hugo](#configure-hugo) section*
 
 ## Set up IAM user
 

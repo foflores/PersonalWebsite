@@ -108,7 +108,7 @@ Now your website is up and should be available at the distribution domain name C
 2. Click on the hosted zone for your website
 3. Click "Create record"
 4. (Optional) Under record name, choose the subdomain you want to use
-    - Leave it blank to use your domain
+   - Leave it blank to use your domain
 5. Make sure the record type is an A record
 6. Turn on "Alias"
 7. Select "Alias to CloudFront distribution" from the dropdown
