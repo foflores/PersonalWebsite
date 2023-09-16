@@ -7,7 +7,7 @@ tags: [""]
 author: "Favian Flores"
 showToc: true
 TocOpen: false
-draft: false
+draft: true
 hideMeta: false
 comments: false
 canonicalURL: "https://favianflores.com/posts/2023/{{ .Name }}/"
