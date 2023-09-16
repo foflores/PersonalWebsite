@@ -36,8 +36,7 @@ automatically deploys a hugo website on a set schedule.
 
 I host this website on AWS CloudFront. In order for GitHub to be able to deploy my website, it needs access to my AWS account.
 
-In my [last article](/posts/2023/how-to-deploy-a-website-to-cloudfront-using
--hugo) you learned how to create an IAM user with the necessary permissions for deploying a Hugo website. You will need the same setup here.
+In my [last article](/posts/2023/how-to-deploy-a-website-to-cloudfront-using-hugo) you learned how to create an IAM user with the necessary permissions for deploying a Hugo website. You will need the same setup here.
 
 Then you can head over to your repository on GitHub and do the following:
 
@@ -94,6 +93,6 @@ Once you've set your desired deployment schedule, you can commit the workflow to
 
 ## Conclusion
 
-You have now scheduled your Hugo website to be deployed regularly. Combined with the publish-date front-matter, you can schedule your blog post releases on any other website updates.
+You have now scheduled your Hugo website to be deployed regularly. Combined with the publish-date front-matter, you can schedule your blog post releases or any other website updates.
 
 A quick note: the `workflow_dispatch` line in the template allows you to manually run the workflow from GitHub. I've found it useful at times, but can be removed if you don't need it.
