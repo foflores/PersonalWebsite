@@ -9,7 +9,7 @@ jobs:
   build-and-deploy:
       runs-on: ubuntu-latest
       env:
-        working-directory: ./personal-website-v3
+        working-directory: ./src/tech-blog
       steps:
       - name: Checkout Main
         uses: actions/checkout@v3.5.2
