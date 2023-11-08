@@ -1,4 +1,4 @@
-name: Build And Deploy - Production
+name: TechBlog.Deploy.Production
 
 on:
   workflow_dispatch:
@@ -9,7 +9,7 @@ jobs:
   build-and-deploy:
       runs-on: ubuntu-latest
       env:
-        working-directory: ./src/tech-blog
+        working-directory: ./TechBlog
       steps:
       - name: Checkout Main
         uses: actions/checkout@v3.5.2

@@ -3,6 +3,7 @@
 ###################
 
 **/public
+**/.obsidian
 
 ###################
 ## Global Settings
@@ -26,6 +27,7 @@
 **/[Pp]ublish/
 **/[Cc]lient[Bb]in/
 **/[Bb]uild/
+**/*.user
 
 # Node js
 **/.ntvs_analysis.dat
@@ -67,7 +69,3 @@
 # Jetbrains
 **/.idea/
 **/out/
-
-
-
-
