@@ -9,8 +9,10 @@ jobs:
       env:
         working-directory: ./TechBlog
       steps:
-      - name: Checkout Main
+      - name: Checkout development
         uses: actions/checkout@v3.5.2
+        with:
+          ref: development
 
       - name: Hugo setup
         uses: peaceiris/actions-hugo@v2.6.0
